@@ -32,14 +32,13 @@ async function getChefBirthday(id) {
         throw new Error(user.message)
     }
 
-    return { ...ricetta, user }
+    return user.birthDate
 }
 
 (async () => {
     try {
-        const recipe = await getChefBirthday(1)
-        console.log('Ricetta e chef :', recipe)
-        console.log('Data di naschita dello chef:', recipe.user.birthDate)
+        const recipe = await getChefBirthday(4)
+        console.log('data di nascita dello chef :', recipe)
     } catch (error) {
         console.error(error)
     } finally {
